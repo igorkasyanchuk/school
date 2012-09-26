@@ -1,0 +1,1 @@
+<%= Student.match(params[:q]).collect{|e| {id: e.id, value: e.name}}.to_json.html_safe %>
