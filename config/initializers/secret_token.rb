@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-School::Application.config.secret_token = '572173c9f7d7d28ff2e52ae61a90ece5b9f5231d35d9196c5408a9916f08a2c1914f03c01ef8cdbc9b372b5acbcbd611febfac21df219e212f89c6cb3e411ed2'
+SchoolProject::Application.config.secret_token = 'ce0239c9098428b734097ff5809e08d1ac7730e5dd6858f177e2c9ccf9aebfb35b6526a947a7614cf70adb15cd140c0ed6a66f56d18458d3b449930081b77c83'
