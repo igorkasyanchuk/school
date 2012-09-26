@@ -1,4 +1,5 @@
 class Admin::DashboardController < InheritedResources::Base
+  layout 'admin'
   USER, PASSWORD = 'admin', 'admin'
   before_filter :authenticate
 

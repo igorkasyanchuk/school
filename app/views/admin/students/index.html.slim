@@ -1,0 +1,18 @@
+.pull-right= link_to "Add Student", [:new, :admin, parent, :student], :class => 'btn btn-primary btn-small'
+.pull-left
+  h1 #{parent.name} Students
+
+table.table.table-striped
+  thead
+    tr
+      th Name
+      th
+  tbody
+    - @students.each do |student|
+      tr
+        td= link_to student.name, edit_resource_path(student)
+        td= link_to 'Delete', [:admin, parent, student], :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-mini'
+    - if @categories.blank?
+      tr
+        td colspan=2
+          | No Students.

@@ -1,5 +1,5 @@
 class Klass < ActiveRecord::Base
-  attr_accessible :name, :school_id
+  attr_accessible :name, :school_id, :student_ids
 
   validates_presence_of :name
 

@@ -14,6 +14,8 @@ gem 'simple_form'
 gem 'execjs'
 gem 'therubyracer'
 
+gem 'bootstrap-sass', '~> 2.1.0.0'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -27,6 +29,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'quiet_assets', :group => :development
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

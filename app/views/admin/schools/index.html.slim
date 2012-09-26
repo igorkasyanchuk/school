@@ -1,0 +1,27 @@
+.pull-right= link_to "Add School", [:new, :admin, :school], :class => 'btn btn-primary btn-small'
+.pull-left
+  h1 Schools
+
+table.table.table-striped
+  thead
+    tr
+      th Name
+      th Students
+      th Classes
+      th
+  tbody
+    - @schools.each do |school|
+      tr
+        td= link_to school.name, edit_resource_path(school)
+        td= school.students.count
+        td= school.klasses.count
+        td
+          = link_to 'Classes', [:admin, school, :klasses], :class => 'btn btn-mini'
+          |  
+          = link_to 'Students', [:admin, school, :students], :class => 'btn btn-mini'
+          |  
+          = link_to 'Delete', [:admin, school], :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-mini'
+    - if @categories.blank?
+      tr
+        td colspan=4
+          | No Schools.

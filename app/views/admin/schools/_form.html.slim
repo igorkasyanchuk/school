@@ -1,0 +1,7 @@
+= simple_form_for([:admin, @school], :html => {:class => 'form-horizontal' }) do |f|
+  .form-inputs 
+    = f.input :name
+  .form-actions 
+    = f.button :submit
+    | &nbsp;
+    = link_to 'Cancel', [:admin, :schools], :class => 'btn btn-danger btn-mini'

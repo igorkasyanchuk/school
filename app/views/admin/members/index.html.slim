@@ -1,0 +1,14 @@
+.pull-right= link_to "Back", :back, :class => 'btn btn-primary btn-small'
+
+.pull-left
+  h1 #{parent.name} Students
+
+.clear
+
+p Type Student Name to add hime to the students list.
+
+= form_tag [:admin, parent, :members], :method => 'post' do
+  = text_field_tag :q
+
+= content_for :on_ready do
+  | App.fn.init_klass_member_association_form();
