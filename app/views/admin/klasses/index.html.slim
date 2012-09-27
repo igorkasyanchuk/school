@@ -1,4 +1,7 @@
-.pull-right= link_to "Add Class", [:new, :admin, parent, :klass], :class => 'btn btn-primary btn-small'
+.pull-right
+  = link_to "Add Class", [:new, :admin, parent, :klass], :class => 'btn btn-primary btn-small'
+  |  
+  = link_to "Students", [:admin, parent, :students], :class => 'btn btn-small'
 .pull-left
   h1 #{parent.name} Classes
 
