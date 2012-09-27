@@ -7,7 +7,7 @@
 
 p Type Student Name to add hime to the students list.
 
-= text_field_tag :q, nil, :id => 'q', 'data-from' => admin_klass_members_path(parent, :format => :json), 'data-to' => admin_klass_members_path(parent, :format => :js), 'data-provide' => "typeahead", "data-items" => '6'
+= text_field_tag :q, nil, :id => 'q', :autocomplete => "off", 'data-from' => admin_klass_members_path(parent, :format => :json), 'data-to' => admin_klass_members_path(parent, :format => :js), 'data-provide' => "typeahead", "data-items" => '6'
 
 = content_for :on_ready do
   | App.fn.init_klass_member_association_form();
