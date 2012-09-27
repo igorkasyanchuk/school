@@ -11,3 +11,17 @@ p Type Student Name to add hime to the students list.
 
 = content_for :on_ready do
   | App.fn.init_klass_member_association_form();
+
+
+h4 Students
+
+- if parent.students.count > 0
+  ul
+    - parent.students.by_name.each do |student|
+      li
+        = student.name
+        |  
+        = link_to 'delete', admin_klass_member_path(parent, student), :method => :delete
+
+- else
+  p No Students.

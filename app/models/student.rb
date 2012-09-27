@@ -6,7 +6,20 @@ class Student < ActiveRecord::Base
   belongs_to :school
   has_and_belongs_to_many :klasses
 
+  scope :by_name, order("name")
+
   def self.match(query)
-    Student.all
+    where('name like ?', "%#{query}%")
   end
+
+  def self.except_klass_students(klass)
+    ids = klass.student_ids
+    ids = [0] if ids.blank?
+    where("id not in (?)", ids)
+  end
+
+  def for_js
+    {:id => self.id, :value => self.name}
+  end
+
 end

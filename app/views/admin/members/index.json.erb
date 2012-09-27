@@ -1,1 +1,1 @@
-<%= Student.match(params[:q]).collect{|e| {id: e.id, value: e.name}}.to_json.html_safe %>
+<%= parent.school.students.match(params[:query]).except_klass_students(parent).collect(&:for_js).to_json.html_safe %>
