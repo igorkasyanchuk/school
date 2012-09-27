@@ -4,5 +4,6 @@ class Klass < ActiveRecord::Base
   validates_presence_of :name
 
   belongs_to :school
-  has_and_belongs_to_many :students
+  has_many :klasses_students, :class_name => "KlassStudent", :dependent => :destroy
+  has_many :students, :through => :klasses_students, :order => :position
 end

@@ -12,7 +12,7 @@ table.table.table-striped
       tr
         td= link_to student.name, edit_resource_path(student)
         td= link_to 'Delete', [:admin, parent, student], :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-mini'
-    - if @categories.blank?
+    - if @students.blank?
       tr
         td colspan=2
           | No Students.

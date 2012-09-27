@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(:version => 20120926174033) do
 
   add_index "klasses", ["school_id"], :name => "index_klasses_on_school_id"
 
-  create_table "klasses_students", :id => false, :force => true do |t|
-    t.integer "klass_id",   :null => false
-    t.integer "student_id", :null => false
+  create_table "klasses_students", :force => true do |t|
+    t.integer "klass_id",                  :null => false
+    t.integer "student_id",                :null => false
+    t.integer "position",   :default => 0
   end
 
   add_index "klasses_students", ["klass_id"], :name => "index_klasses_students_on_klass_id"

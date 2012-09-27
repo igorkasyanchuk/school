@@ -12,9 +12,12 @@ table.table.table-striped
     - @klasses.each do |klass|
       tr
         td= link_to klass.name, edit_resource_path(klass)
-        td= link_to klass.students.count, [:admin, klass, :members], :class => 'btn btn-success'
-        td= link_to 'Delete', [:admin, parent, klass], :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-mini'
-    - if @categories.blank?
+        td= klass.students.count
+        td
+          = link_to 'Assign / Sort', [:admin, klass, :members], :class => 'btn btn-success'
+          |  
+          = link_to 'Delete', [:admin, parent, klass], :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-mini'
+    - if @klasses.blank?
       tr
         td colspan=3
           | No Classes.

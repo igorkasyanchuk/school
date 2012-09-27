@@ -7,7 +7,11 @@ SchoolProject::Application.routes.draw do
       resources :klasses
     end
     resources :klasses do
-      resources :members, :only => [:index, :create, :destroy]
+      resources :members, :only => [:index, :create, :destroy] do
+        collection do
+          post :sort
+        end
+      end
     end
   end
 

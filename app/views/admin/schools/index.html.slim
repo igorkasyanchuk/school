@@ -21,7 +21,7 @@ table.table.table-striped
           = link_to 'Students', [:admin, school, :students], :class => 'btn btn-mini'
           |  
           = link_to 'Delete', [:admin, school], :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-mini'
-    - if @categories.blank?
+    - if @schools.blank?
       tr
         td colspan=4
           | No Schools.

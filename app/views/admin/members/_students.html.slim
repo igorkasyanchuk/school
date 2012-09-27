@@ -1,0 +1,14 @@
+h4 Students
+
+- if parent.students.count > 0
+  ol.sortable data-update=sort_admin_klass_members_path(parent, :format => :js)
+    - parent.students.each do |student|
+      li id="students_#{student.id}"
+        i.icon-move
+        |  
+        = student.name
+        |  
+        = link_to 'delete', admin_klass_member_path(parent, student, :format => :js), :method => :delete, :remote => true
+
+- else
+  p No Students.
