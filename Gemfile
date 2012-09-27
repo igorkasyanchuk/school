@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 
 gem 'sqlite3'
+gem "pg", :group => :production
 
 gem 'slim'
 gem 'slim-rails'
