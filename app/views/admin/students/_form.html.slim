@@ -1,7 +1,7 @@
 = simple_form_for([:admin, parent, @student], :html => {:class => 'form-horizontal' }) do |f|
   .form-inputs 
     = f.input :name
-    = f.association :klasses, :as => :check_boxes, :label => "Classes"
+    = f.association :klasses, :as => :check_boxes, :label => "Classes", :collection => parent.klasses
   .form-actions 
     = f.button :submit
     | &nbsp;

@@ -3,4 +3,6 @@ class School < ActiveRecord::Base
 
   has_many :students, :dependent => :destroy
   has_many :klasses, :dependent => :destroy
+
+  validates_presence_of :name
 end
